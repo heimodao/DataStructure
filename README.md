@@ -1,2 +1,2 @@
-# LuaDataStructure
-Practicing Lua and data structure
+# Practicing DataStructure #
+Practicing data structures in many lang
