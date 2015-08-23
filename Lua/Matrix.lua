@@ -1,10 +1,10 @@
 require("Util")
 
---·ç¾Æ¿¡¼­ Çà·Ä ±¸ÇöÇÏ±â
---1. ÀÌÂ÷¿ø ¹è¿­ (Å×ÀÌºíÀÇ °¢ ¿ø¼Ò°¡ Å×ÀÌºíÀÓ)
---2. Å×ÀÌºíÀº ÇÏ³ª, º¹¼öÀÇ ÀÎµ¦½º ¿ä¼Ò¸¦ Á¶ÇÕÇØ¼­ »ç¿ë (ÀÍÈ÷ ¾Æ´Â 1Â÷¿ø ¹è¿­·Î 2Â÷¿ø Çà·Ä ¾²±â)
+--ë£¨ì•„ì—ì„œ í–‰ë ¬ êµ¬í˜„í•˜ê¸°
+--1. ì´ì°¨ì› ë°°ì—´ (í…Œì´ë¸”ì˜ ê° ì›ì†Œê°€ í…Œì´ë¸”ìž„)
+--2. í…Œì´ë¸”ì€ í•˜ë‚˜, ë³µìˆ˜ì˜ ì¸ë±ìŠ¤ ìš”ì†Œë¥¼ ì¡°í•©í•´ì„œ ì‚¬ìš© (ìµížˆ ì•„ëŠ” 1ì°¨ì› ë°°ì—´ë¡œ 2ì°¨ì› í–‰ë ¬ ì“°ê¸°)
 
---¹æ¹ý 1)
+--ë°©ë²• 1)
 
 function createMatrix(M, N)
   local matrix = {};
@@ -17,7 +17,7 @@ function createMatrix(M, N)
   return matrix;
 end
 
--- ¹æ¹ý 1À» ÀÀ¿ëÇØ¼­ ÇÏºÎ»ï°¢Çà·ÄÀ» °£´ÜÇÏ°Ô ¸¸µé ¼ö ÀÖ´Ù
+-- ë°©ë²• 1ì„ ì‘ìš©í•´ì„œ í•˜ë¶€ì‚¼ê°í–‰ë ¬ì„ ê°„ë‹¨í•˜ê²Œ ë§Œë“¤ ìˆ˜ ìžˆë‹¤
 function createTMatrix(M)
   local matrix = {};
   for i = 1, M do
@@ -31,14 +31,14 @@ end
 
 
 
--- ¹æ¹ý 2)
+-- ë°©ë²• 2)
 
 function createMatrix2(M,N)
   local matrix = {};
   for i = 1, M do
     for j = 1, N do
       matrix[(i-1)*N + j] = 0;
-    -- Å°°¡ ¹®ÀÚ¿­ÀÌ¶ó¸é ¾Æ·¡Ã³·³ ¹®ÀÚ¿­ Á¶ÇÕÀ» »ç¿ëÇÏ´Â ¹æ½ÄÀ¸·Î ÀÀ¿ë
+    -- í‚¤ê°€ ë¬¸ìžì—´ì´ë¼ë©´ ì•„ëž˜ì²˜ëŸ¼ ë¬¸ìžì—´ ì¡°í•©ì„ ì‚¬ìš©í•˜ëŠ” ë°©ì‹ìœ¼ë¡œ ì‘ìš©
     --      matrix[ i .. " : " .. j] = 0;
     end
   end
@@ -46,13 +46,13 @@ function createMatrix2(M,N)
 end
 
 
---Ç×¸ñ »çÀÌ¿¡ nil°ªÀÌ ÀÖ´Â °æ¿ì ±æÀÌ ¿¬»êÀÚ¸¦ »ç¿ëÇÑ ¹Ýº¹¹® »ç¿ë ºÒ°¡
---pairs() »ç¿ë
---¿¹) Æ¯Á¤ Çà·ÄÀÇ Æ¯Á¤ Çà¿¡ »ó¼ö k¸¦ °öÇÏ±â
+--í•­ëª© ì‚¬ì´ì— nilê°’ì´ ìžˆëŠ” ê²½ìš° ê¸¸ì´ ì—°ì‚°ìžë¥¼ ì‚¬ìš©í•œ ë°˜ë³µë¬¸ ì‚¬ìš© ë¶ˆê°€
+--pairs() ì‚¬ìš©
+--ì˜ˆ) íŠ¹ì • í–‰ë ¬ì˜ íŠ¹ì • í–‰ì— ìƒìˆ˜ kë¥¼ ê³±í•˜ê¸°
 function mult(matrix, rowidx, k)
   local row = matrix[rowidx];
   for i, v in pairs(row) do
-    row[i] = v * k; 
+    row[i] = v * k;
   end
 end
 
@@ -62,7 +62,7 @@ function main()
   local matrix = createMatrix(5,5);
   printTable(matrix);
   print("--------------------------")
-  
+
   local matrix = createMatrix2(4,4);
   printTable(matrix)
   print("--------------------------")
@@ -74,5 +74,5 @@ end
 
 main()
 
--- Å×ÀÌºí¿¡¼­ Å°ÀÇ ¼ø¼­´Â º¸ÀåµÇÁö ¾ÊÀ½
--- °Ë»ö ¼ø¼­ °°Àº °Ô ÇÊ¿äÇÏ´Ù¸é ¿¬°á ¸®½ºÆ®³ª ¾²´Â °Ô...
+-- í…Œì´ë¸”ì—ì„œ í‚¤ì˜ ìˆœì„œëŠ” ë³´ìž¥ë˜ì§€ ì•ŠìŒ
+-- ê²€ìƒ‰ ìˆœì„œ ê°™ì€ ê²Œ í•„ìš”í•˜ë‹¤ë©´ ì—°ê²° ë¦¬ìŠ¤íŠ¸ë‚˜ ì“°ëŠ” ê²Œ...
